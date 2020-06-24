@@ -1,0 +1,10 @@
+headers = wiringPiI2C.h
+headerFilter = wiringPiI2C.h
+package = wiringpi.i2c
+
+libraryPaths = libs
+staticLibraries = libwiringPi.so
+
+compilerOpts.linux = -Ilibs/includes
+linkerOpts.linux = -Llibs -lwiringPi
+

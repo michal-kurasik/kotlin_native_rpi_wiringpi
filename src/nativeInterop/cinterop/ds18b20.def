@@ -1,0 +1,9 @@
+headers = ds18b20.h
+headerFilter = ds18b20.h
+package = wiringpi.ds18b20
+
+libraryPaths = libs
+staticLibraries = libwiringPi.so
+
+compilerOpts.linux = -Ilibs/includes
+linkerOpts.linux = -Llibs -lwiringPi

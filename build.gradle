@@ -1,0 +1,46 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.3.72'
+    id 'org.hidetake.ssh' version '2.10.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+kotlin {
+    linuxArm32Hfp("arm") {
+        binaries {
+            executable() {
+                entryPoint "sample.main"
+            }
+        }
+
+        compilations.main.cinterops {
+            wiringPi
+            i2c
+            spi
+            serial
+            ds18b20
+        }
+    }
+}
+
+remotes {
+    pi {
+        host = '192.168.0.106'
+        user = 'pi'
+        password = "$piPassword"
+    }
+}
+
+task upload {
+    doLast {
+        ssh.run {
+            session(remotes.pi) {
+                put from: "$buildDir/bin/arm/releaseExecutable/KotlinNativeExampleRPi.kexe", into: "/home/pi"
+            }
+        }
+    }
+}
+
+//build.dependsOn upload

@@ -1,0 +1,10 @@
+headers = wiringPiSPI.h
+headerFilter = wiringPiSPI.h
+package = wiringpi.spi
+
+libraryPaths = libs
+staticLibraries = libwiringPi.so
+
+compilerOpts.linux = -Ilibs/includes
+linkerOpts.linux = -Llibs -lwiringPi
+
