@@ -66,7 +66,7 @@ The WiringPi library (version 2.50) was compiled on Raspberry Pi and copied to t
 The entire circuit doesn't have to be built.\
  he only required elements are those that are used in the specific test.
 
-![schem](https://github.com/michal-kurasik/assets-test/blob/master/img/schem/ALL.png?raw=true)
+![schem](https://github.com/michal-kurasik/kotlin_native_rpi_wiringpi/blob/assets/assets/circuit.png?raw=true)
 
 Please note that pin numbering in WiringPi library is different than in the OS.\
 WiringPi pins numbering guide: http://wiringpi.com/pins/ 
