@@ -30,8 +30,6 @@ const val VIRTUAL_PIN = 77
 @ExperimentalUnsignedTypes
 fun main() {
     println("Kotlin Native with WiringPi")
-
-    //TODO check wiring, times, strings
     wiringPiSetup()
     menu()
 }
